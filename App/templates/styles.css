@@ -7,6 +7,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    padding: 20px;
 }
 
 /* Container */
@@ -15,30 +16,30 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 350px;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
+    margin-top: 500px;  /* Add this line to create space at the top */
 }
 
-/* Form */
-form {
+
+/* Form Styling */
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
-/* Grid Layout */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    text-align: left;
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 input, select {
     width: 100%;
     padding: 8px;
-    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
@@ -54,6 +55,7 @@ input, select {
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
+    width: 100%;
 }
 
 .btn:hover {
