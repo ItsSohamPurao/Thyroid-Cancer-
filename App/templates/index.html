@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Diagnosis Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Thyroid Diagnosis Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+
+            <label for="ethnicity">Ethnicity:</label>
+            <select name="ethnicity" required>
+                <option value="0">Caucasian</option>
+                <option value="1">Hispanic</option>
+                <option value="2">Asian</option>
+                <option value="3">African</option>
+                <option value="4">Middle Eastern</option>
+            </select>
+
+            <label>Family History:</label>
+            <div class="radio-group">
+                <input type="radio" name="family_history" value="0" checked> No
+                <input type="radio" name="family_history" value="1"> Yes
+            </div>
+
+            <label>Radiation Exposure:</label>
+            <div class="radio-group">
+                <input type="radio" name="radiation_exposure" value="0" checked> No
+                <input type="radio" name="radiation_exposure" value="1"> Yes
+            </div>
+
+            <label>Iodine Deficiency:</label>
+            <div class="radio-group">
+                <input type="radio" name="iodine_deficiency" value="0" checked> No
+                <input type="radio" name="iodine_deficiency" value="1"> Yes
+            </div>
+
+            <label>Obesity:</label>
+            <div class="radio-group">
+                <input type="radio" name="obesity" value="0" checked> No
+                <input type="radio" name="obesity" value="1"> Yes
+            </div>
+
+            <label>Diabetes:</label>
+            <div class="radio-group">
+                <input type="radio" name="diabetes" value="0" checked> No
+                <input type="radio" name="diabetes" value="1"> Yes
+            </div>
+
+            <label for="continent">Continent:</label>
+            <select name="continent" required>
+                <option value="0">North America</option>
+                <option value="1">South America</option>
+                <option value="2">Europe</option>
+                <option value="3">Africa</option>
+                <option value="4">Asia</option>
+                <option value="5">Australia</option>
+            </select>
+
+            <label for="thyroid_cancer_risk">Thyroid Cancer Risk:</label>
+            <select name="thyroid_cancer_risk" required>
+                <option value="0">Low</option>
+                <option value="1">Medium</option>
+                <option value="2">High</option>
+            </select>
+
+            <button type="submit">Predict Diagnosis</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                <h3>Prediction: {{ prediction }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
