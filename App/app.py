@@ -4,13 +4,13 @@ import numpy as np
 
 app = Flask(__name__)
 
-model_path = "D:\ACTUAL STUDY MATERIAL\PythonCodes\ML\Thyroid Cancer\App\Models\thyroid_cancer_risk_model.pkl"
+model_path = r"D:\ACTUAL STUDY MATERIAL\PythonCodes\ML\Thyroid Cancer\App\Models\thyroid_cancer_risk_model.pkl"
 
-model = pickle.load(open('thyroid_cancer_risk_model.pkl','rb'))
+model = pickle.load(open(model_path,'rb'))
 
 @app.route("/")
 def home():
-    return render_template("index.html", prediction=None)
+    return render_template("index.html")
 
 @app.route("/predict", methods=["POST"])
 def predict():
