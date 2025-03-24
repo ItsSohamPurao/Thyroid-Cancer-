@@ -1,6 +1,6 @@
 import pickle
 
-model_path = r"d:\ACTUAL STUDY MATERIAL\PythonCodes\ML\Thyroid Cancer\Models\thyroid_cancer_risk_model.pkl"
+model_path = r"D:\ACTUAL STUDY MATERIAL\PythonCodes\ML\Thyroid Cancer\App\Models\thyroid_cancer_risk_model.pkl"
 
 try:
     with open(model_path, "rb") as f:
