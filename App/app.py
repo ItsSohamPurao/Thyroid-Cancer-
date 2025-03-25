@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-model_path = r"D:\ACTUAL STUDY MATERIAL\PythonCodes\ML\Thyroid Cancer\App\Models\thyroid_cancer_risk_model.pkl"
+model_path = r"App/Models/thyroid_cancer_risk_model_rf.pkl"
 
 model = pickle.load(open(model_path,'rb'))
 
